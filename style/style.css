@@ -39,7 +39,7 @@
       font-size: large;
       font-family: Arial, sans-serif;
       opacity: 0.2;
-      transition: opacity 0.2s linear;
+      transition: opacity 0.4s linear;
     }
 
     .button:hover {
@@ -54,13 +54,6 @@
       background-color: var(--blue);
     }
 
-    span {
-      color: var(--white);
-      font-weight: bolder;
-      padding: 0 5px;
-      pointer-events: none;
-    }
-
     .image {
       width: 1920px;
     }
@@ -71,6 +64,11 @@
       border-radius: 41px;
       opacity: 1;
       color: var(--white);
+      transition: border-radius 0.4s linear;
+    }
+
+    .open:active {
+      border-radius: 0px;
     }
 
     .button_1 {
