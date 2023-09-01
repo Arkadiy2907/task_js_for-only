@@ -39,7 +39,7 @@
       font-size: large;
       font-family: Arial, sans-serif;
       opacity: 0.2;
-      transition: all 0.2s linear;
+      transition: opacity 0.2s linear;
     }
 
     .button:hover {
