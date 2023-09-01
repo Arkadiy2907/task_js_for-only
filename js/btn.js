@@ -1,21 +1,26 @@
 'use strict'
 
-const buttons = document.querySelectorAll('.button');
+const buttonContainer = document.getElementById('buttonContainer');
+const buttons = buttonContainer.querySelectorAll('.button');
+const image = document.querySelector('.image');
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
+const handle = e => {
+  if (e.target.tagName === 'BUTTON') {
+    const button = e.target;
     const name = button.dataset.name;
-    console.log(name);
     button.classList.toggle('open');
     button.innerHTML = button.classList.contains('open') ? `<span>&#8722;&ensp;</span> ${name} ` : '<span>&#43;</span>';
-  });
-});
-
-document.addEventListener('click', event => {
-  if (!event.target.classList.contains('button')) {
-    buttons.forEach(button => {
-      button.innerHTML = '<span>&#43;</span>';
-      button.classList.remove('open');
-    });
   }
+}
+
+window.addEventListener('load', handle)
+
+buttonContainer.addEventListener('click', handle);
+
+image.addEventListener('click', () => {
+  buttons.forEach(button => {
+    button.innerHTML = '<span>&#43;</span>';
+    button.classList.remove('open');
+  });
+  image.removeEventListener('click', () => { });
 });
