@@ -17,7 +17,6 @@ const init = () => {
     const openButton = buttonContainer.querySelector('.button.open');
     if (openButton) {
       openButton.classList.remove('open');
-      openButton.innerHTML = '';
     }
   });
 }
