@@ -43,7 +43,8 @@
 }
 
 .button:hover {
-  opacity: 1
+  opacity: 1;
+  cursor: pointer;
 }
 
 .btn_green {
@@ -67,8 +68,15 @@
   transition: border-radius 0.4s linear
 }
 
-b {
-  pointer-events: none;
+.button.open::before {
+  content: '\2212';
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.button.open::after {
+  content: attr(data-name);
+  display: inline-block;
 }
 
 .open:active {
